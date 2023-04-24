@@ -1,0 +1,243 @@
+/*
+COMENTARIO en CSS:
+La REGLA CSS tiene 2 partes:
+1) El "Selector" (<select>)le indica al navegador qué elemento de
+HTML se selecciona para aplicarles una regla que incluye los
+valores de las propiedades CSS.que es una ETIQUETA html. 
+
+2) Bloque de declaración: {
+    atributo: valor;
+    atributo-de-mas-de-dos-palabras: otro-valor;
+}
+Es IMPRESCINDIBLE el : y el ; para no tener errores de sintaxis.
+*/
+/*Eejemplo de declaración:Dopnde el selector es lña etiqueta h1,
+el bloque de declaraciones tiene los atributos de color, 
+y background-colo.*/
+h1{
+    color:rgb(83, 83, 212);
+    background-color: rgb(179, 180, 182);
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+}
+
+
+/* LINK DE REFERENCIA: 
+
+🟢 Emmet.io - https://emmet.io/
+🔵 Enlaces de la documentación de CSS:
+  - https://es.wikipedia.org/wiki/Hoja_de...
+  - https://www.w3.org/html/logo/
+  - https://www.w3.org/standards/webdesig...
+  - https://www.w3.org/TR/css-2020/
+  - https://developer.mozilla.org/es/docs...
+🔵 CSS Reference - https://cssreference.io/
+🔵 Can I Use - https://caniuse.com/
+🔵 Code Guide - https://codeguide.co/
+🔵 Pseudoclases - https://developer.mozilla.org/es/docs...
+🔵 Pseudoelementos - https://developer.mozilla.org/es/docs...
+🔵 Propiedades hederables - https://web.dev/learn/css/inheritance...
+🔵 Reset CSS - https://meyerweb.com/eric/tools/css/r...
+🔵 Normalize CSS - https://necolas.github.io/normalize.css/
+🔵 Autoprefixer CSS - https://autoprefixer.github.io/
+🔵 Modelo de Caja - https://developer.mozilla.org/es/docs...
+🔵 Tamaño de Caja Paul Irish - https://www.paulirish.com/2012/box-si...
+🔵 960 Grid System - https://960.gs/
+*/
+
+
+/*HAY 3 FORMAS DE APLICAR ESTILOS EN CSS:
+
+1) Aplicando "ESTILOS CON HOJA EXTERNA al documento"
+   A través de LA ETIQUETA <link> esto es "BUENA PRÁCTICA" -->
+   <link rel="stylesheet" href="CSS_YouTube.css">
+2) Aplicando "ESTILOS EN LÍNEA" a través de <style> 
+   La cursiva es por la etiqueta <i>.   El color y bold es por la etiqueta <style> -->
+   <p><i style="font-weight: bold; color:gray">Cascading Style Sheets</i> - Hojas de estilo en cascada</p>
+
+3) Aplicando "ESTILOS EN EL INTERIOR DEL DOCUMENTO"
+   a través de <style> -->
+   <style>
+   h1{
+    color:magenta;
+   }
+   </style>
+  */ 
+
+  /*MALA PRÁCTICA: IMPORTAR una HOJA DE ESTILO ESTERNA.
+   @import url("http://www.colocamos-el-link@de-la-hoja-de-ruta.com");
+   
+   CUIDADO: ES UNA MALA PRÁCTICA. // Avoid @imports  //
+   es preferible: 
+   <!-- Use link elements -->
+   <link rel="stylesheet" href="core.css">
+  */
+
+  /*  DECLARATION ORDER
+  APROPIADAMENTE SE DEBE AGRUPAR ASÍ: 
+  - Positioning
+  - Box model
+  - Typographic
+  - Visual
+  - Misc */
+
+/* HAY 3 TIPOS DE SELECTORES
+  (Selector es un elemento html al que le aplicaremos estilos CSS) 
+  
+A) Etiquetas (elementos HTML):
+   USAR "ETIQUETAS" ES UNA MALA PRÁCTICA.
+   Lo que le aplicamos a una se repite en todas
+   las etiquetas del mismo tipo. POr ejemplo:
+   Todas las etiquetas de párrafo (p) tendrán color: blue.*/
+  p{
+   color: blue;
+  }
+
+/* B) Indentificadores / ID: Se accede con el atributo "ID".
+   USAR ESTO ES UNA MALA PRÁCTICA.
+ - Se considera un antipatrón dar "estilos" usando un ID.
+ - Además tienen mayor peso sobre los demás selectores
+  disponibles. por lo que NO se recomiendan su uso.*/
+  #parrafo-dos {
+    background-color: gray;
+}
+
+/* C) Clases: Se accede con el Atributo ".CLASS"
+  USAR CLASS ES UNA BUENA PRÁCTICA. ES RECOMENDABLE.
+  Permite reutilizar nuestro código CSS.
+  IMPORTANTE: ORDENAR LAS CLASS EN ORDEN ALFABÉTICO
+*/
+
+.bg-skyblue {
+  background-color:skyblue;
+ }
+
+.bg-steelblue {
+  background-color: steelblue;
+}
+
+.text-20 {
+   font-size: 20px;
+}
+
+.text-28 {
+  font-size: 28px;
+}
+
+.text-white {
+  color: white;
+}
+
+.hijos-directos > li {
+  background-color: thistle;
+}
+
+.hijos-descendientes b {
+ background-color: thistle;
+}
+
+.hermanos-general ~ li {
+background-color: thistle;
+}
+
+.hermanos-adyacentes + li {
+  background-color: thistle;
+  }
+
+/* Selectores de atributos: 
+Se coloca entre corchetes el atributo al que se hará
+referencia. Por ejemplo abajo decimos... 
+A los enlaces que tengan un atributo href, aplicales
+los siguientes estilo...
+*/
+
+.selectores-atributos a[href]{
+  color: orangered;
+}
+
+/*Acá le decimos: cuando tengan el atributo target
+y el valor blank, aplicales el estilo definido... */
+.selectores-atributos a[target="_blank"]{
+  font-weight: bold;
+}
+
+/* El comodín del * aplica el estilo i si contiene el
+texto en cuestión en cualquier parte */
+
+.selectores-atributos a[href*=jonmircha] {
+  font-size: 22px;
+}
+
+
+/* El comodín del ^ aplica el estilo si contiene el texto en cuestión al inicio.
+"text-decoration" es el subrayado que tiene los enlaces http */
+.selectores-atributos a[href^="http://"] {
+  text-decoration: none;
+}
+
+/* El comodín del $ aplica el estilo si contiene el texto en cuestión al final */
+.selectores-atributos a[href$=".com"]{
+  background-color: black;
+}
+
+/* El comodín del ~ aplica el estilo si contiene el texto en cuestión en una lista separada por espacios*/
+.selectores-atributos a[class~="cursos"] {
+  text-decoration: midnightblue;
+}
+
+/* El comodín del | aplica el estilo si contiene el texto en cuestión en
+una lista separada por espacios y que luego del texto en cuestión tenga un
+guión medio - */
+.selectores-atributos a[class|="menu"] {
+  font-style: italic;
+}
+
+/* SELECTOR UNIVERSAL (*) 
+Se aplica a todos los elementos del documento*/
+
+*{
+  font-family: sans-serif;
+}
+
+.selector-universal-contextual * {
+  font-style: oblique;
+}
+
+/* Pseudoclases: Dan estilo dependiendo del contexto,
+posición o estado del elemento. Sintaxis:  
+
+selector:pseudoclase { 
+  propiedad:
+  valor;
+}
+https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
+
+Las PSEUDOCLASES COMIENZAN CON dos puntos :
+*/
+
+.form-pseudoclases *:required{  
+  border-color: blue;
+  border-bottom: 5;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 26px 5px;
+}
+
+/* Cuandop la información del formulario sea válida
+el borde se cambiará al color magenta*/
+
+.form-pseudoclases *:valid {
+  border-color: magenta;
+}
+
+/* Cuandop la información del formulario sea inválida
+el borde se cambiará al color red.
+
+Así tanto invalid como valid trabajan según el atributo
+required*/
+
+.form-pseudoclases *:valid {
+  border-color: red;
+}

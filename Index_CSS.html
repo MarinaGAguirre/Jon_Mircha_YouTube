@@ -6,110 +6,180 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curso de CSS</title>
-  <!--Aplicando "ESTILOS CON HOJA EXTERNA al documento:"
-  a través de LA ETIQUETA <link> esto es "BUENA PRÁCTICA" -->
-  <link rel="stylesheet" href="CSS_YouTube.css">
+<!--Aplicando "ESTILOS CON HOJA EXTERNA al documento:"
+a través de LA ETIQUETA <link> esto es "BUENA PRÁCTICA" -->
 
-  <!--Aplicando "ESTILOS EN EL INTERIOR DEL DOCUMENTO"
-  a través de <style> MALA PRÁCTICA-->  
+  <link rel="stylesheet" href="Styles_CSS.css">
+
+<!--Aplicando "ESTILOS EN EL INTERIOR DEL DOCUMENTO"
+a través de <style> MALA PRÁCTICA-->  
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     h1{
       color:rgb(255, 255, 255);
     }
+
   </style>
 </head>
 
-<body>
- <h1>Aprendiendo CSS</h1>
+  <body>
+    <article id="temario-css">
+    <h1>Aprendiendo CSS</h1>
 <!--Aplicando "ESTILOS EN LÍNEA" a través de <style> 
 La cursiva es por la etiqueta <i>.
 El color y bold es por la etiqueta <style> -->
- <p><i style="font-weight: bold; color:gray">Cascading Style Sheets</i> - Hojas de estilo en cascada</p>
+    <p><i style="font-weight: bold; color:gray">Cascading Style Sheets</i> - Hojas de estilo en cascada</p>
 
- <h2 id="temario-css">Temario del Curso</h2>
- <ul>
-   <li><a href="Index_CSS.html#selectores-basicos">Selectores Básicos</a></li>
-   <li><a href="Index_CSS.html#selectores-avanzados"></a>Selectores Avanzados</li>
-   <li><a href=""></a></li>
-   <li><a href=""></a></li>
- </ul>
+    <h2>Temario del Curso</h2>
+    <ul>
+      <li><a href="Index_CSS.html#selectores-basicos">Selectores Básicos</a></li>
+      <li><a href="Index_CSS.html#selectores-avanzados">Selectores Avanzados</a></li>
+      <li><a href="Index_CSS.html#pseudoclases">Pseudoclases</a></li>
+      <li><a href="Index_CSS.html#"></a></li>
+    </ul>
+  </article>
 
-<hr>
+  <hr>
 
-<article id="selectores-basicos">
-  <h2>Selectores Básicos</h2>
-  <p>
+  <article id="selectores-basicos">
+    <h2>Selectores Básicos</h2>
+    <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
     Ut, architecto! Dicta animi fugiat nobis hic modi aperiam nostrum enim,
     at reprehenderit, saepe vitae pariatur, rem provident commodi dignissimos!
-  </p>
-  <p id="parrafo-dos">
+    </p>
+    <p id="parrafo-dos">
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
     Ut, architecto! Dicta animi fugiat nobis hic modi aperiam nostrum enim,
     at reprehenderit, saepe vitae pariatur, rem provident commodi dignissimos!
-  </p>
-  <!--Abajo "tx" por texto. "32" por el tamaño del texto.
-    "bg" por background y "white" poe el color blanco -->
-  <p class="text-28 bg-skyblue">
+    </p>
+<!--Abajo "tx" por texto. "32" por el tamaño del texto.
+"bg" por background y "white" poe el color blanco -->
+    <p class="text-28 bg-skyblue">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     Ipsa accusantium sint quam aliquam perferendis sapiente minus esse,
     voluptas molestiae cumque minima, repudiandae quod, laboriosam natus?
-  </p>
-  <p class="text-20 bg-steelblue text-white">
+    </p>
+    <p class="text-20 bg-steelblue text-white">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     Ipsa accusantium sint quam aliquam perferendis sapiente minus esse,
     voluptas molestiae cumque minima, repudiandae quod, laboriosam natus?
-  </p>
-  <p class="text-28 bg-steelblue text-white">
+    </p>
+    <p class="text-28 bg-steelblue text-white">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     Ipsa accusantium sint quam aliquam perferendis sapiente minus esse,
     voluptas molestiae cumque minima, repudiandae quod, laboriosam natus?
-  </p>
+    </p>
+
+    <a href="Index_CSS.html#temario-css">▲</a>
+  </article>
+
+  <hr>
+
+  <article id="selectores-avanzados">
+    <h2>Selectores Avanzados</h2>
+    <h3>Selectores de HIJOS</h3>
+    <h4>1-Selector de HIJOS DIRECTOS</h4>
+
+<!--Los HIJOS DIRECTOS de la etiqueta <ul> son las 
+etiquetas <li> y la etiqueta <b> NO es un hijo directo 
+Los estilos que apliquemos a class "HIJOS DIRECTOS" sólo
+se aplica a los elemntos hijos, o sea <li> -->
+    <ul class="hijos-directos">
+      <li><b>Primavera</b></li>
+      <li><b>Verano</b></li>
+      <li><b>Otoño</b></li>
+      <li><b>Invierno</b></li>
+    </ul>
+
+    <h4>2-Selector de HIJOS DESCENDIENTES</h4>
+<!--Los HIJOS DESCENDIENTES de la etiqueta <ul> son las 
+etiquetas <b> y los estilos que le indiquemos se aplicaran
+a los elemntos descendientes, o sea <b> -->
+    
+    <ul class="hijos-descendientes">
+      <li><b>Primavera</b></li>
+      <li><b>Verano</b></li>
+      <li><b>Otoño</b></li>
+      <li><b>Invierno</b></li>
+    </ul>
+
+    <h3>Selectores de HERMANOS</h3>
+<!--En los selectores de HERMANOS los estilos se 
+aplicarán a los elementos hermanos que estén por
+debajo del elemento de referencia (otoño, invierno).
+Acá la referencia es Verano -->
+    <h4>Selector de HERMANOS EN GENERAL</h4>
+    <ul>
+      <li><b>Primavera</b></li>
+      <li class="hermanos-general"><b>Verano</b></li>
+      <li><b>Otoño</b></li>
+      <li><b>Invierno</b></li>
+    </ul>
+
+    <h4>Selector de HERMANOS ADYACENTES</h4>
+<!--En los selectores de HERMANOS ADYACENTES los estilos se 
+aplicarán a los elementos hermanos que estén inmediatamente
+después del selector seleccionado, o sea por debajo de verano: Otoño -->
+    <ul>
+      <li><b>Primavera</b></li>
+      <li class="hermanos-adyacentes"><b>Verano</b></li>
+      <li><b>Otoño</b></li>
+      <li><b>Invierno</b></li>
+    </ul>
+
+    <h3>Selector de ATRIBUTOS</h3>
+    <nav class="selectores-atributos">
+      <ul>
+        <li><a href="https://jonmircha.com/" target="_blank">Inicio</a></li>
+        <li><a class="menu-item cursos button" href="https://jonmircha.com/cursos" target="_blank">Cursos</a></li>
+        <li><a href="http://jonmircha.com/blog" target="_blank">Blog</a></li>
+        <li><a href="https://jonmircha.com/mentoria" target="_blank">Mentorías</a></li>
+        <li><a class="menu item ahora button" href="https://jonmircha.com/hola" target="_blank">Hola</a></li>
+        <li><a href="Index_CSS.html#temario-css">Regrasar al temario</a></li>
+      </ul>
+    </nav>
+
+    <h3>Selector Universal (*)</h3>
+
+    <ul class="selector-universal-contextual">
+      <li><b>Primavera</b></li>
+      <li><b>Verano</b></li>
+      <li><b>Otoño</b></li>
+      <li><b>Invierno</b></li>
+    </ul>
+
+    <a href="Index_CSS.html#temario-css">▲</a>
+  </article>
+  
+  <hr>
+
+  <article id="pseudoclases">
+    <h2>Pseudoclases</h2>
+<form class="form-pseudoclases">
+  <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+  <br><br>
+  <input type="email" name="correo" placeholder="Escribe tu correo" required>
+  <br>
+  <br>
+  <input type="submit">
 
 
-  <a href="Index_CSS.html#temario-css">▲</a>
-</article>
-
-<hr>
-
-<article id="selectores-avanzados">
-  <h2>Selectores Avanzados</h2>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Ut, architecto! Dicta animi fugiat nobis hic modi aperiam nostrum enim,
-    at reprehenderit, saepe vitae pariatur, rem provident commodi dignissimos!
-  </p>
-  <p id="parrafo-dos">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Ut, architecto! Dicta animi fugiat nobis hic modi aperiam nostrum enim,
-    at reprehenderit, saepe vitae pariatur, rem provident commodi dignissimos!
-  </p>
-  <!--Abajo "tx" por texto. "32" por el tamaño del texto.
-    "bg" por background y "white" poe el color blanco -->
-  <p class="text-28 bg-skyblue">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Ipsa accusantium sint quam aliquam perferendis sapiente minus esse,
-    voluptas molestiae cumque minima, repudiandae quod, laboriosam natus?
-  </p>
-  <p class="text-20 bg-steelblue text-white">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Ipsa accusantium sint quam aliquam perferendis sapiente minus esse,
-    voluptas molestiae cumque minima, repudiandae quod, laboriosam natus?
-  </p>
-  <p class="text-28 bg-steelblue text-white">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Ipsa accusantium sint quam aliquam perferendis sapiente minus esse,
-    voluptas molestiae cumque minima, repudiandae quod, laboriosam natus?
-  </p>
+</form>
 
 
-  <a href="Index_CSS.html#temario-css">▲</a>
-</article>
+    <a href="Index_CSS.html#temario-css">▲</a>
+  </article>
 
-<hr>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br>
+  <hr> 
+  
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br>
 
 
-</body>
+  </body>
 </html>
