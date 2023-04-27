@@ -38,11 +38,14 @@ El color y bold es por la etiqueta <style> -->
     <ul>
       <li><a href="Index_CSS.html#selectores-basicos">Selectores Básicos</a></li>
       <li><a href="Index_CSS.html#selectores-avanzados">Selectores Avanzados</a></li>
-      <li><a href="Index_CSS.html#pseudoclases">Pseudoclases</a></li>
-      <li><a href="Index_CSS.html#"></a></li>
+      <li><a href="Index_CSS.html#pseudoclases">Pseudo-clases Interactivas</a></li>
+      <li><a href="Index_CSS.html#pseudo-elementos">Pseudo-elementos</a></li>
+      <li><a href="Index_CSS.html#agrupar-selectores">Agrupar Selectores</a></li>
+      <li><a href="Index_CSS.html#algoritmo-css">El algoritmo de CSS</a></li>
+      <li><a href="Index_CSS.html#prefijos-navegadores">Prefijos de los Navegadores</a></li>
+      <li><a href="box-model.html">Modelo de Caja</a></li>
     </ul>
   </article>
-
   <hr>
 
   <article id="selectores-basicos">
@@ -75,9 +78,8 @@ El color y bold es por la etiqueta <style> -->
     voluptas molestiae cumque minima, repudiandae quod, laboriosam natus?
     </p>
 
-    <a href="Index_CSS.html#temario-css">▲</a>
-  </article>
-
+    <a href="Index_CSS.html#temario-css">▲ IR AL INICIO<</a>
+  </article>  
   <hr>
 
   <article id="selectores-avanzados">
@@ -153,30 +155,129 @@ después del selector seleccionado, o sea por debajo de verano: Otoño -->
       <li><b>Invierno</b></li>
     </ul>
 
-    <a href="Index_CSS.html#temario-css">▲</a>
-  </article>
+    <a href="Index_CSS.html#temario-css">▲ IR AL INICIO<</a>
   
+  </article>  
   <hr>
 
   <article id="pseudoclases">
-    <h2>Pseudoclases</h2>
-<form class="form-pseudoclases">
-  <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
-  <br><br>
-  <input type="email" name="correo" placeholder="Escribe tu correo" required>
-  <br>
-  <br>
-  <input type="submit">
+    <h2>Pseudo-clases Interactivas</h2>
+    <form class="form-pseudoclases">
+      <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+      <br><br>
+      <input type="email" name="correo" placeholder="Escribe tu correo" required>
+      <br>
+      <br>
+      <input type="submit">
+    </form>
 
+    <br>
+    <nav class="menu-pseudoclases">
+      <a href="seccion1">Sección 1</a>
+      <a href="seccion2">Sección 2</a>
+      <a href="seccion3">Sección 3</a>
+      <a href="seccion4">Sección 4</a>
+    </nav>
 
-</form>
+    <p class="p-pseudoclase">
 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Optio adipisci necessitatibus dolor ex alias rem quo autem 
+    voluptatibus eveniet fuga? Quisquam veniam dolores neque fuga 
+    corrupti omnis ratione eaque tempora.
+    </p>
 
-    <a href="Index_CSS.html#temario-css">▲</a>
+<!--Abajo, aplicaremos "ESTILOS EN PSEUDO-CLASES" según
+la posición en la que se encuentra el contenedor. -->  
+
+    <ol class="lista-pseudoclases">
+      <li>Aries</li>
+      <li>Tauro</li>
+      <li>Géminis</li>
+      <li>Cáncer</li>
+      <li>Leo</li>
+      <li>Virgo</li>
+      <li>Libra</li>
+      <li>Escorpio</li>
+      <li>Sagitario</li>
+      <li>Capricornio</li>
+      <li>Acuario</li>
+      <li>Piscis</li>
+    </ol>
+
+    <article class="articulo-pseudoclases">
+      <heder>Esto es un header</heder>
+        <p>Esto es un párrafo</p>
+      <div>Esto es una div</div>
+        <p>Esto es un párrafo</p>
+      <section>Esto es una section</section>
+        <p>Esto es un párrafo</p>
+      <div>Esto es una div</div>
+        <p>Esto es un párrafo</p>
+      <footer>Esto es un footer</footer>
+    </article>
+    <br>
+
+    <a href="Index_CSS.html#temario-css">▲ IR AL INICIO</a>
+  </article>
+  <hr>
+  <article id="pseudo-elementos">
+    <h2>Pseudo-elementos</h2>
+      <p>
+        <i>Bandai Myth Cloth Ex</i> <span class="saga-gemenis">Saga de Géminis</span>
+        <span class="saga-precio"> 500</span>
+      </p>
+      <p class="p-pseudo-elementos">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Deleniti explicabo ut, ducimus voluptatibus error excepturi
+        maiores amet quidem quibusdam.
+      </p>
+      <input class="input-pseudoelementos" type="text" name="nombre" placeholder="Escribe tu signo zodiacal">
+
+    <a href="Index_CSS.html#temario-css">▲ IR AL INICIO</a>
+
+  </article>
+  <hr> 
+  <article id="agrupar-selectores">
+    <h2>Agrupar Selectores</h2>
+    <form class="form-agrupar-selectores">
+      <input type="text" name="nombre" placeholder="Escibe tu nombre">
+      <input type="mail" name="corre" placeholder="Escibe tu correo">
+      <textarea name="comentarios" placeholder="Comenta aquí" cols="30" rows="5"></textarea>
+    </form>
+    <a href="Index_CSS.html#temario-css">▲ IR AL INICIO</a>
+  </article>
+  <hr> 
+  <article id="algoritmo-css">
+    <h2>El algoritmo de CSS</h2>
+  <ol>
+    <li>La Cascada</li>
+    <li>La Especificidad</li>
+    <li>La Herencia</li>
+  </ol>
+  <blockquote id="cita-marco" class="cita-marco">
+  "Sé tolerante con los demás y estricto contigo mismo". <cite>Marco Aurelio</cite></blockquote>
+  <a href="Index_CSS.html#temario-css">▲ IR AL INICIO</a>
+  </article>
+  <hr> 
+  <article id="prefijos-navegadores">
+    <h2>Prefijos de los Navegadores</h2>
+     <ul>
+      <li>Navegadores Microsoft prefijo: <code><b>-ms-</b></code></li>
+      <li>Navegadores Firefox prefijo: <code><b>-moz-</b></code></li>
+      <li>Todos los demas Navegadores prefijo: <code><b>-webkit-</b></code></li>
+     </ul>  
+    <a href="Index_CSS.html#temario-css">▲ IR AL INICIO</a>
+  </article>
+  <hr> 
+
+  <article id="modelo-de-caja">
+    <h2>Modelo de Caja</h2>
+
+  
+    <a href="Index_CSS.html#temario-css">▲ IR AL INICIO</a>  
   </article>
 
-  <hr> 
-  
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br>
 

@@ -11,7 +11,7 @@ valores de las propiedades CSS.que es una ETIQUETA html.
 }
 Es IMPRESCINDIBLE el : y el ; para no tener errores de sintaxis.
 */
-/*Eejemplo de declaración:Dopnde el selector es lña etiqueta h1,
+/*Eejemplo de declaración:Donde el selector es la etiqueta h1,
 el bloque de declaraciones tiene los atributos de color, 
 y background-colo.*/
 h1{
@@ -91,7 +91,7 @@ A) Etiquetas (elementos HTML):
    las etiquetas del mismo tipo. POr ejemplo:
    Todas las etiquetas de párrafo (p) tendrán color: blue.*/
   p{
-   color: blue;
+   color: black;
   }
 
 /* B) Indentificadores / ID: Se accede con el atributo "ID".
@@ -204,8 +204,10 @@ Se aplica a todos los elementos del documento*/
   font-style: oblique;
 }
 
-/* Pseudoclases: Dan estilo dependiendo del contexto,
-posición o estado del elemento. Sintaxis:  
+/* Pseudoclases: es un selector que marca los elementos
+que están en un estado específico. Dan estilo
+dependiendo del contexto, posición o estado del 
+elemento. Sintáxis:  
 
 selector:pseudoclase { 
   propiedad:
@@ -214,6 +216,8 @@ selector:pseudoclase {
 https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
 
 Las PSEUDOCLASES COMIENZAN CON dos puntos :
+/////ESTAS DE ABAJO SON PSEUDO CLASES PARA 
+ELEMENTOS DE FORMULARIOS: ////////////////
 */
 
 .form-pseudoclases *:required{  
@@ -232,7 +236,7 @@ el borde se cambiará al color magenta*/
   border-color: magenta;
 }
 
-/* Cuandop la información del formulario sea inválida
+/* Cuando la información del formulario sea inválida
 el borde se cambiará al color red.
 
 Así tanto invalid como valid trabajan según el atributo
@@ -241,3 +245,267 @@ required*/
 .form-pseudoclases *:valid {
   border-color: red;
 }
+
+/* Cuando coloco el foco en cualquier elemento del formulario, 
+el color del fondo se cambiará al color seleccionado. */
+
+.form-pseudoclases *:focus {
+  background-color: rgb(243, 166, 237);
+}
+
+/* En pseudo-clases el elemento :visited aplica cuando
+ya se visitó un enlace. En este caso se podrá verde oliva. */
+
+.menu-pseudoclases a:visited{
+  color: olivedrab;
+}
+
+
+/*En la clase "menu-pseudoclase" hay un elemento "anchor"
+o "ancla" <a> crea un enlace (link) a otras páginas. 
+La pseudo-clase :hover aplica cuando se interactúa con un
+elemento señalador. Es cuando se pasa con el ratón por
+encima de un elemento. */
+
+.menu-pseudoclases a:hover{
+  color: orangered;
+}
+
+
+/* 
+La Pseudo-clase :hover se aplica cuando el usuario 
+interactúa con un elemento HTML con un dispositivo
+señalador (mouse, cursor) sobre el elemento.
+*/
+
+.p-pseudoclase:hover {
+  font-style: italic;
+  font-size: 20px;
+}
+
+/* IMPORTANTE IMPORTANTE IMPORTANTE IMPORTANTE
+//////////////////////////////////////////////
+Cuando el elemento ID temario-css esté activo
+(con el target activo) se cambiará el color de
+fondo. con esto podemos hacer 
+
+MENÚ BÁSICOS MÓVILES sin usar JavaScript */
+
+#temario-css:target{
+  background-color: rgb(218, 220, 223);
+}
+
+/* Ahora vamos a aplicra estilos por posición con
+
+*/
+
+.lista-pseudoclases li:first-child{
+  color: green;
+}
+
+.lista-pseudoclases li:last-child{
+  color:magenta;
+}
+
+/* La pseudo-clase "nth-child()" selecciona elementos
+en un grupo de hermanos que coinciden con el patrón
+especificado. Abajo es el elemento numero 3 de la lista */
+.lista-pseudoclases li:nth-child(3){
+  color:rgb(67, 35, 180);
+}
+
+/* La pseudo-clase "nth-child()" selecciona abajo
+elemento de 2 en 2 para aplicar el estilo indicado.*/
+.lista-pseudoclases li:nth-child(2n){
+  font-family: Times New Roman;
+}
+
+
+/* La pseudo-clase "nth-child(3n)" selecciona abajo
+elemento de 3 en 3 para aplicarle el estilo.*/
+.lista-pseudoclases li:nth-child(3n){
+  font-weight: bold;
+}
+
+/* La pseudo-clase "nth-child(3n + 1)" selecciona abajo
+elemento de 3 en 3 más un elemento para aplicarle
+el estilo "oblique".*/
+.lista-pseudoclases li:nth-child(3n + 1){
+  font-style: oblique;
+}
+
+/* La pseudo-clase "nth-child(even)" aplica ciertos estilos
+para los elementos PARES=even y para los IMPARES=odd.*/
+
+.lista-pseudoclases li:nth-child(even){
+  background-color: rgb(194, 190, 190);
+}
+
+.lista-pseudoclases li:nth-child(odd){
+  background-color: rgb(229, 138, 138);
+}
+
+/* con la Pseudo-clase :first-of-type indicamos que
+aplique el estilo al primero del tipo párrafo "p"
+el color indicado.*/
+
+.articulo-pseudoclases p:first-of-type{
+  background-color: rgb(220, 247, 240);
+}
+
+/* con la Pseudo-clase :last-of-type indicamos que
+aplique el estilo al último del tipo párrafo "p"
+el color indicado.*/
+
+.articulo-pseudoclases p:last-of-type{
+  background-color: rgb(240, 166, 166);
+}
+
+/* con la Pseudo-clase :nth-of-type indicamos que
+aplique el estilo al último del tipo párrafo "p"
+el color indicado.*/
+
+.articulo-pseudoclases p:nth-last-of-type(2) {
+  background-color: rgb(187, 172, 211);
+}
+
+/* con la Pseudo-clase asterisco (*) es el
+selector universal (o sea todo los elementos) 
+es la pseudo-clase en la que trabajamos, excepto
+los párrafos que indicamos con :not(p)
+*/
+
+.articulo-pseudoclases *:not(p) {
+  background-color: beige;
+}
+
+/* PSEUDO-ELEMENTOS: Se añaden a los selectores.
+Sirven para aplicar estilos a partes más específicas
+dentro de una etiqueta o elemento. Se emplea el ::
+para diferenciarlos de las pseudo-clases. 
+Sintaxis: selector::pseudo-elemento { propiedad: valor; }
+::after
+::before
+::first-letter: 
+::first-line: Selecciona solo la primera línea del
+elemento especificado por el selector.
+::selection
+*/
+
+/* Para el uso de la pseudo-pripiedad ::before y ::after 
+es muy importante usar el ATRIBUTO "content" */
+.saga-geminis::before{
+  content: "👦";
+}
+
+.saga-geminis::after{
+  content: "♊";
+}
+
+.saga-precio::before{
+  content: "$";
+  font-weight: bold;
+}
+
+.saga-precio::after{
+  content:  " (dolares U.S.A)";
+  font-weight: bold;
+}
+
+/* Para párrafos, div, encabezados, section, article, etc
+aplican los pseudo-elementos ::first-letter y ::first-line */
+
+.p-pseudo-elementos::first-letter{
+  font-size: 32;
+  font-weight: bold;
+}
+
+.p-pseudo-elementos::first-line{
+color: darkblue;
+}
+
+.p-pseudo-elementos::selection{
+  background: greenyellow;
+  }
+
+.input-pseudoelementos::placeholder{
+  color:blue;
+}
+
+/* AGRUPANDO SELECTORES */
+
+/* Para agrupar estilos del selector .form
+podemos hacer lo siguiente empleando la coma ,  */
+
+.form-agrupar-selectores input[type="text"],
+.form-agrupar-selectores input[type="mail"],
+.form-agrupar-selectores textarea {
+  border-color: brown;
+  border-width: 2px;
+  border-radius: 5px;
+
+  background-color: bisque;
+  font-size: 20w;
+  display: block;
+  width: 300px; 
+}
+
+/* EL ALGORITMO DE CSS */
+
+/* Es la forma en que el navegador aplica lños estilos
+al documento HTML. Es IMPORTANTE ender cómo se aplican
+y sobreescriben en ocasiones las reglas CSS.
+1) La Cascada.
+2) La especificidad.
+3) La Herencia.
+ */
+
+/*1) LA CASCADA: El navegador aplica los estilos en el siguiente orden: 
+
+     I) ORÍGEN DEL CÓDIGO:
+        a) "User Agent Stylesheet" (Hoja de estilo del agente de usuario.
+        b) "User stylesheets": Propias del usuario. Como aumentar el zoom, o oponerle un tema claso u oscuro.
+        c) "Author stylesheets": Estilos del autor, son las que hacemos en las hojas CSS. Lo que hacen los developers...
+
+     II) ESPECIFICIDAD DEL SELECTOR:
+     Es el "peso" (importancia o valor) que tiene el selector que empleamos. Es la manera mediante la cual los navegadores deciden qué valores
+     de una propiedad CSS son más relevantes para un elemento cuando hay conflictos de estilos. Así se calcula:
+
+     Etiquetas y pseudo-elementos.........0,0,0,1
+     Clases, atributos, pseudo-clases.....0,0,1,0
+     Identificadores ID (.)...............0,1,0,0
+     Estílos en línea.....................1,0,0,0
+     !important............Rompe la especificidad
+
+     II) ORDEN DE APARICIÓN. */
+  
+/* 2) LA HERENCIA: En CSS es el mecanismo mediante el cual determinadas propiedades de un elemento padre se transmiten a sus hijos.
+      Por ejemplo, si para un elemento se le establece el color (color) y el tipo de letra (font-family), cada elemento que se
+      encuentre dentro de él también se mostrará de ese color y con ese tipo de letra. 
+      Lo que SÍ se hereda: Tipopgrafía, tamaño, familia tipográfica, color de font.
+      Hay propiedades que no se heredan como el background.
+
+*/
+
+
+/*Aplicando ESTILOS a la ETIQUETA blockquote considerando la ESPECIFICIDAD de cada etiqueda, clase y ID. Donde hay que considerar NO sólo el
+Orden de la Cascada, sino tb la especificidad  */
+
+blockquote{
+  background-color: darkblue;
+  color: white;
+}
+
+/* El PESO ESPECÍFICO del ID que se indentifica con # es la GANADORA y la que prevalecerá (1,0,0) */
+#cita-marco {
+  background-color: green;
+}
+
+blockquote.cita-marco {
+  background-color: tomato;
+}
+
+.cita-marco {
+  background-color: cornflowerblue;
+}
+

@@ -1,0 +1,108 @@
+/* MODELO DE CAJA: Es la forma en que CSS vé los elementos.
+Todo en CSS tiene una caja alrededor, y comprender estas 
+cajas es clave para poder crear diseños con CSS o para 
+alinear elementos con otros elementos. */
+
+/*
+Propiedades de las Cajas:
+
+1. El contenido (content): El contenido que por lo gral es texto.
+   Teniendo en cuenta sus dimensiones ANCHO Y ALTO. (width & heigth)
+2. Border (border): Delimita cada elemento HTML (la frontera).
+3. Relleno (padding): Son las distancias internas entre border y contenido.
+4. Margen (margin): Son las distancias externas, entre el elemento HTML y sus elementos hermanos o padres.
+
+Dentro del modelo debemos considerar que UNA CAJA tendrá 4 lados.
+1. Arriba. (top)
+2. Derecha (right)
+3. Abajo (bottom)
+4. Izquierda (left) 
+*/
+
+body{
+  margin: 0px;
+}
+
+h1 {
+  width: 350px;
+  height: 200px;
+  /*El border tiene 3 propiedades: width, style & color */
+  /* Propiedades de tipo Shorthand: Permiten establecer 
+  simultáneamente valores de múltiples propiedades.   */
+  border-width: 1px;
+  border-style: solid;
+  border-color: blueviolet;
+  padding: 10px;
+  /*Otra forma corta de indicar Propiedades:*/
+  border: 1px solid blueviolet;
+}
+
+/* PROPIEDADES DE MARGIN Y PADDING */
+
+.caja-uno,
+.caja-dos {
+  background-color: gray;
+  border: medium solid rgb(70, 243, 114);
+  padding: 10px;
+  margin: 20px; 
+/* ESto aplica para MARGIN Y PADDING:display: 
+   1 valor   = aplica a los 4 lados.    
+   2 valores = 1º valor para lados verticales (top/bottom)
+               2º valor para lados horizontales (left/right )*/
+/* Por cascada el navegador aplicará lo definido en
+último lugar, o sea lo de acá abajo: */
+  padding: 20px 40px;
+  margin: 40px 20px;
+}
+
+/* El Modelo de Caja tiene 2 tipos principales:
+
+a) Cajas en línea:
+
+- Ocupan el espacio necesario para mostrar su contenido.
+- No tienen dimensiones modificables (alto, ancho)
+- Permiten otros elementos a su lado.
+- Padding y Margin sólo empujan a elementos adyacentes en forma horizontal, 
+  NUNCA en VERTICAL.
+- NO aplicarle padding o margin VERTICALES.
+- Span es la caja de línea por excelencia.
+
+Por ejemplo: a, span, label, strong, br, input, textarea,
+abbr, acronym, b, basefont, bdo, big, cite, code, dfn, em,
+font, i, kbd, q, s, samp, select, small, strike, sub, sup,
+u, u, var
+
+b) Cajas en bloque:
+
+- Ocupan todo el ancho disponible, lo que genera saltos
+  de línea. (fuerzan un salto de línea).
+- Tienen dimensiones modificables (alto, ancho)
+- Son elementos que trabajan en bloque.
+- No permiten otros elementos a su lado (aunque especifiquen
+  un ancho, siguen ocupando todo el espacio disponible).
+- Div es la caja de bloque por excelencia.
+
+Por ejemplo: Encabezados, párrafos, semanticas y los elementos
+multimedia trabajan en línea. div, p, h1, h2, h3, h4, h5, h6,
+hr, ol, ul, table, li, address, blockquote, center, dir, dl,
+fieldset, formisindex, noframes, noscript, pre, dd, dt,
+frameset, tbody, td, tfoot, th, thead, tr
+
+  */
+
+.caja-linea,
+.caja-bloque {
+  background-color: darkcyan;
+  width: 500px;
+  height: 120px;
+  border: medium solid black;
+  padding: 16px;
+}
+
+.caja-bloque {
+  margin: 32px; 
+}
+
+.caja-linea {
+    margin: 48px; 
+  }
